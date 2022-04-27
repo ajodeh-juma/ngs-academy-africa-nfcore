@@ -93,27 +93,31 @@ Clone the repo in your `home` directory
     docker run rnaseq-image salmon --version
     ```
 
-2. Run the script using `docker`
-    ```
-    nextflow run main.nf -with-docker rnaseq-image
-    ```
+    ## Exercise
+    1. Mount the parent directory identical to the container using the flag ```-v```
+    or ```--volume``` and generate the genome index using `salmon` by running the
+    container in interactive mode.
+
+    2. Run the script using `docker`
+        ```
+        nextflow run main.nf -with-docker rnaseq-image
+        ```
 
 
-## Exercise
-1. In your `workflow`:
-    
-    (a). Add a `process` that preprocesses the raw reads using `fastp` and use
-    the preprocessed reads as `input` for the `quantification` step with `salmon`.
+    3. In your `workflow`:
+        
+        (a). Add a `process` that preprocesses the raw reads using `fastp` and use
+        the preprocessed reads as `input` for the `quantification` step with `salmon`.
 
-    (b). As outputs, emit the `channels`:  `.json`, `.html` and the `.log` files as
-    outputs.
-    
-    (c). Use the `.json` outputs as input for in the `multiqc` process to
-    summarize and visualize.
-     
-    (d). Add a `process` that counts the number of reads before (raw reads) and
-    after (preprocessed reads). Print the outputs in `stdout`.
+        (b). As output(s), emit the `channels`:  `.json`, `.html` and the `.log` files as
+        outputs.
+        
+        (c). Use the `.json` outputs as input for in the `multiqc` process to
+        summarize and visualize.
+        
+        (d). Add a `process` that counts the number of reads before (raw reads) and
+        after (preprocessed reads). Print the output(s) in `stdout`.
 
-2. Run the `workflow` using the `conda` profile.
+    4. Run the `workflow` using the `conda` profile.
 
 

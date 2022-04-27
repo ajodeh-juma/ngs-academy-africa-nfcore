@@ -74,41 +74,6 @@ process FASTQC {
     """
 }
 
-process FASTP {
-
-    tag "$sample_id"
-
-    publishDir "${params.outdir}/fastp", mode:'copy'
-
-    input:
-    tuple val(sample_id), path(reads)
-
-    output:
-    tuple val(sample_id), path('*.trim.fq')      , emit: reads
-    tuple val(sample_id), path('*.json')         , emit: json
-    tuple val(sample_id), path('*.html')         , emit: html
-    tuple val(sample_id), path('*.log')          , emit: log
-
-    script:
-    def prefix   = "${sample_id}"
-    // Add soft-links to original FastQs for consistent naming in pipeline
-    """
-    [ ! -f  ${prefix}_1.fq ] && ln -s ${reads[0]} ${prefix}_1.fq
-    [ ! -f  ${prefix}_2.fq ] && ln -s ${reads[1]} ${prefix}_2.fq
-
-    fastp \\
-        --in1 ${prefix}_1.fq \\
-        --in2 ${prefix}_2.fq \\
-        --out1 ${prefix}_1.trim.fq \\
-        --out2 ${prefix}_2.trim.fq \\
-        --json ${prefix}.fastp.json \\
-        --html ${prefix}.fastp.html \\
-        --thread $task.cpus \\
-        --detect_adapter_for_pe \\
-        2> ${prefix}.fastp.log
-    """
-}
-
 process INDEX {
 
     tag "$transcriptome"
