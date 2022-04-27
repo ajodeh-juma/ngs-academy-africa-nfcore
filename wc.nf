@@ -48,7 +48,5 @@ process NUM_LINES {
     """
     printf '${read} '
     gunzip -c ${read} | wc -l
-    printf '${read} '
-    gunzip -c ${read} | echo \$((`wc -l`/4))
     """
 }
