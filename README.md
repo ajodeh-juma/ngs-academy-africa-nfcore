@@ -108,7 +108,7 @@ Clone the repo in your `home` directory
     (b). As outputs, emit the `channels`:  `.json`, `.html` and the `.log` files as
     outputs.
     
-    (c). Use the `.log` output as input for in the `multiqc` process to
+    (c). Use the `.json` outputs as input for in the `multiqc` process to
     summarize and visualize.
      
     (d). Add a `process` that counts the number of reads before (raw reads) and
