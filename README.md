@@ -103,9 +103,9 @@ Clone the repo in your `home` directory
 1. In your `workflow`:
     
     (a). Add a `process` that preprocesses the raw reads using `fastp` and use
-    the preprocessed reads as input for the `quantification` step with `salmon`.
+    the preprocessed reads as `input` for the `quantification` step with `salmon`.
 
-    (b). In the `process`, emit `.json`, `.html` and the `.log` files as
+    (b). As outputs, emit the `channels`:  `.json`, `.html` and the `.log` files as
     outputs.
     
     (c). Use the `.log` output as input for in the `multiqc` process to
