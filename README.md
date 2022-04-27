@@ -59,7 +59,7 @@ Clone the repo in your `home` directory
 
 1. Create a `conda` environment
     ```
-    conda env create -f environment.yml
+    conda env create -f environment.yaml
     ```
     The `environment.yml` file has all the required tools/software and
     dependencies for the simple pipleine that we will run. (You can have a
