@@ -99,7 +99,7 @@ Clone the repo in your `home` directory
     ```
 
 
-## Challenge
+## Exercise
 1. In your `workflow`:
     
     (a). Add a `process` that preprocesses the raw reads using `fastp` and use
@@ -111,7 +111,7 @@ Clone the repo in your `home` directory
     (c). Use the `.log` output as input for in the `multiqc` process to
     summarize and visualize.
      
-    (b). Add a `process` that counts the number of preprocessed reads. Print the
+    (d). Add a `process` that counts the number of preprocessed reads. Print the
     output in `stdout`.
 
 2. Run the `workflow` using the `conda` profile.
