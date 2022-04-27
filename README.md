@@ -111,8 +111,8 @@ Clone the repo in your `home` directory
     (c). Use the `.log` output as input for in the `multiqc` process to
     summarize and visualize.
      
-    (d). Add a `process` that counts the number of preprocessed reads. Print the
-    output in `stdout`.
+    (d). Add a `process` that counts the number of reads before (raw reads) and
+    after (preprocessed reads). Print the outputs in `stdout`.
 
 2. Run the `workflow` using the `conda` profile.
 
