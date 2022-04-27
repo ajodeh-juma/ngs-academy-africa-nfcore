@@ -100,10 +100,14 @@ Clone the repo in your `home` directory
 
 
 ## Challenge
-1. In your `workflow` add a `process` that preprocesses the raw reads using
-`fastp` and use the preprocessed reads as input for the `quantification` step
-with `salmon`
+1. In your `workflow`:
+    
+    (a). Add a `process` that preprocesses the raw reads using `fastp` and use
+    the preprocessed reads as input for the `quantification` step with `salmon`
 
+    (b). Add a `process` that counts the number of preprocessed reads. Print the
+    output in `stdout`.
+    
 2. Run the `workflow` using the `conda` profile.
 
 
