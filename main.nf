@@ -8,6 +8,17 @@ params.reads = "$projectDir/data/ggal/*_{1,2}.fq"
 params.transcriptome_file = "$projectDir/data/ggal/transcriptome.fa"
 params.outdir = "results"
 
+log.info """\
+        R N A S E Q - N F   P I P E L I N E    
+        ===================================
+        transcriptome: ${params.transcriptome_file}
+        reads        : ${params.reads}
+        outdir       : ${params.outdir}
+        """
+        .stripIndent()
+
+
+
 
 workflow {
 
