@@ -1,8 +1,8 @@
 - [Introduction](#introduction)
 - [Login](#login)
 - [Prep](#prep)
-- [Your-First-Script](#your-first-script)
-- [Simple-RNA-Seq-pipeline](#simple-rna-seq-pipeline)
+- [Your First script](#your-first-script)
+- [Simple RNA-Seq pipeline](#simple-rna-seq-pipeline)
 
 
 
