@@ -1,0 +1,10 @@
+{
+    "salmon_version": "1.8.0",
+    "threads": "1",
+    "libType": "U",
+    "index": "index",
+    "mates1": "gut_1.fq",
+    "mates2": "gut_2.fq",
+    "output": "gut",
+    "auxDir": "aux_info"
+}
