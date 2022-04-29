@@ -75,20 +75,43 @@ Clone the repo in your `home` directory
     nextflow run main.nf -profile conda
     ```
 
-4. Deactivate the `conda` environment
+4. In the `environment.yaml` file, add a dependency `fastp` and `update` the
+   conda environment by using the command:
+   ```
+   conda env update -f environment.yaml
+   ```
+## Exercise
+
+1. In your `workflow`:
+
+    (a). Add a `process` that preprocesses the raw reads using `fastp` and use
+    the preprocessed reads as `input` for the `quantification` step with `salmon`.
+
+    (b). As output(s), emit the `channels`:  `.json`, `.html` and the `.log` files as
+    outputs.
+    
+    (c). Use the `.json` outputs as input for in the `multiqc` process to
+    summarize and visualize.
+    
+    (d). Add a `process` that counts the number of reads before (raw reads) and
+    after (preprocessed reads). Print the output(s) in `stdout`.
+
+
+
+
+### Using Docker
+1. Deactivate the `conda` environment
     ```
     conda deactivate
     ```
 
-### Using Docker
-
-1. Build a Docker image
+2. Build a Docker image
     ```
     docker build -t rnaseq-image .
     ```
     This may take a couple of minutes
 
-2. Test container by looking at the `Salmon` version
+3. Test container by looking at the `Salmon` version
     ```
     docker run rnaseq-image salmon --version
     ```
@@ -104,20 +127,6 @@ Clone the repo in your `home` directory
         ```
 
 
-    3. In your `workflow`:
-        
-        (a). Add a `process` that preprocesses the raw reads using `fastp` and use
-        the preprocessed reads as `input` for the `quantification` step with `salmon`.
-
-        (b). As output(s), emit the `channels`:  `.json`, `.html` and the `.log` files as
-        outputs.
-        
-        (c). Use the `.json` outputs as input for in the `multiqc` process to
-        summarize and visualize.
-        
-        (d). Add a `process` that counts the number of reads before (raw reads) and
-        after (preprocessed reads). Print the output(s) in `stdout`.
-
-    4. Run the `workflow` using the `conda` profile.
+    
 
 
